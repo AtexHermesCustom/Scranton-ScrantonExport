@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Tag rules configuration file
+
+	History:
+	20140519 	jpm			do not export text tagged with style that ends with "obit date_HE"
+	20140417	jpm			do not export text tagged with "obit date_HE"
+	20120810 	jpm/Atex 	creation
+	
+-->
+<configuration>
+
+	<!-- tag handling -->
+	<tag-rules>
+		<!-- Do not export -->
+		<rule pattern="jump" 			replacement="DELETE"/>
+		<rule pattern="page top" 		replacement="DELETE"/>
+		<rule pattern="story label" 	replacement="DELETE"/>
+		<rule pattern="_NO$" 			replacement="DELETE"/>
+		<rule pattern="obit date_HE$" 		replacement="DELETE"/>
+
+		<!-- tag pattern replacements -->
+		<rule pattern="byline attrib" 	replacement="BYLINETITLE" 	to-upper="1"/>
+		<rule pattern="byline name"		replacement="BYLINE" 		to-upper="1"/>
+		<rule pattern="credit line"		replacement="CAPTION" 		to-upper="1"/>
+		<rule pattern="end credit line" replacement="TEXT" 			to-upper="1"/>
+		<rule pattern="letter town"		replacement="TEXT" 			to-upper="1"/>
+		<rule pattern="sig$"			replacement="HEADLINE" 		to-upper="1"/>
+		<rule pattern="small type breakers" 	replacement="TEXT" 		to-upper="1"/>
+		<rule pattern="weekend category" 		replacement="TEXT" 		to-upper="1"/>
+		<rule pattern="subhead" 				replacement="TEXT"/>
+		<rule pattern="(briefs|school notes) body" 		replacement="TEXT"/>
+		<rule pattern="notes body copy" 		replacement="TEXT"/>
+		<rule pattern="briefs head" 			replacement="TEXT"/>
+		<rule pattern="school notes head" 		replacement="TEXT"/>
+		<rule pattern="notes brief head" 		replacement="TEXT"/>
+		<rule pattern="bizweek brf head" 		replacement="TEXT"/>
+		<rule pattern="clipboard head" 			replacement="TEXT"/>
+		<rule pattern="letter head" 			replacement="TEXT"/>
+		<rule pattern="^small type breakers$" 	replacement="TEXT"/>
+		<rule pattern="(quote|byline) name" 	replacement="BYLINE"/>
+		<rule pattern="Reverse Header_FS$" 		replacement="TEXT"/>
+		<rule pattern="Datebook&amp;Cal Header_FS$" 	replacement="TEXT"/>
+		<rule pattern="info box head_FS" 		replacement="TEXT"/>
+		<rule pattern="agate" 					replacement="TEXT"/>
+		<rule pattern="StandaloneCreditline_FS"   replacement="TEXT"/>
+		<rule pattern="StandaloneCutline_FS"      replacement="TEXT"/>
+		<rule pattern="^sig$" 					replacement="BYLINE"/>
+		<rule pattern="cutline.*?_HE$" 			replacement="HEADLINE"/>
+		<rule pattern="(cut|name)line"			replacement="CAPTION"/>
+		<rule pattern="cut.*?_CA$"			replacement="CAPTION"/>
+		<rule pattern="credit" 				replacement="PHOTOCREDIT"/>
+		<rule pattern="head|obit"			replacement="HEADLINE"/>
+		<rule pattern="headline" 			replacement="HEADLINE"/>
+		<rule pattern="byline attrib" 		replacement="BYLINETITLE"/>
+		<rule pattern="breaker" 			replacement="SUBHEADLINE"/>
+		<rule pattern="weekend category" 	replacement="SUBHEADLINE"/>
+		<rule pattern="summary" 			replacement="SUMMARY"/>
+		<rule pattern="byline attribution_SO$" 	replacement="BYLINETITLE" 	to-upper="1"/>
+		<rule pattern="byline name_BY$"		replacement="BYLINE" 	to-upper="1"/>
+		<rule pattern="credit line_CA$"		replacement="CAPTION" 	to-upper="1"/>
+		<rule pattern="end credit line_FS$" replacement="TEXT" 		to-upper="1"/>
+		<rule pattern="letter town_FS$"		replacement="TEXT" 		to-upper="1"/>
+		<rule pattern="sig_HE$"				replacement="HEADLINE" 	to-upper="1"/>
+		<rule pattern="small type breakers_FS$" replacement="TEXT" 	to-upper="1"/>
+		<rule pattern="weekend category_FS$" replacement="TEXT" 	to-upper="1"/>
+		<rule pattern="tagline bold" 		replacement="TEXT" 		to-upper="1"/>
+
+		<!-- style mapping -->
+		<rule pattern="_HE$" 		replacement="HEADLINE"/>
+		<rule pattern="_BY$" 		replacement="BYLINE"/>
+		<rule pattern="_SO$" 		replacement="BYLINETITLE"/>
+		<rule pattern="_CA$" 		replacement="CAPTION"/>
+		<rule pattern="_CR$" 		replacement="PHOTOCREDIT"/>
+		<rule pattern="_SH$" 		replacement="SUBHEADLINE"/>
+		<rule pattern="_SU$" 		replacement="SUMMARY"/>
+
+		<!-- Default rule -->
+		<rule pattern="." 			replacement="TEXT"/>
+	</tag-rules>
+
+	<!-- note handling -->
+	<note-rules>
+		<rule pattern="&lt;webhed&gt;(.*?)&lt;\/webhed&gt;" 	target-style="webhed"/>
+		<rule pattern="(BREAKING NEWS)" 						target-style="breaking news"/>
+		<rule pattern="&lt;keyword&gt;(.*?)&lt;\/keyword&gt;" 	target-style="keyword"/>
+	</note-rules>
+
+</configuration>

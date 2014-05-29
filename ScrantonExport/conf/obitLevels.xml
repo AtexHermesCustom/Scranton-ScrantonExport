@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	List of Obituary levels
+
+	History:
+	20140312 	jpm/Atex 	creation
+	
+-->
+<levels>
+	<level>SC_TIMES_TRIB/NEWS/OBITS</level>
+	<level>WB_VOICE/CITY/OBITS</level>
+	<level>WB_VOICE/CITY/OBITS/OBITS_PAID</level>
+	<level>TW_REVIEW/LOCAL/OBITS</level>
+	<level>SH_NEWSITEM/LOCAL/OBITS</level>
+	<level>PR_REPUBLICAN/LOCAL/OBITS</level>
+	<level>PI_PROGINDEX/LOCAL/OBITS</level>
+	<level>HZ_STANDSPEAK/LOCAL/OBITS</level>
+	<level>VI_DAILYNEWS/LOCAL/OBITS</level>
+</levels>
