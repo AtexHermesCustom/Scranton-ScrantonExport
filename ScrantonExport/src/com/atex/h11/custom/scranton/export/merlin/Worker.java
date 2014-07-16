@@ -267,12 +267,17 @@ public class Worker extends CommonWorker {
 		    if (prop.startsWith("transform.photo.param."))
 		        t.setParameter(prop.replaceFirst("transform.photo.param.", ""), props.getProperty(prop));
 		}
-        t.setOutputProperty(OutputKeys.METHOD, "text");
+		t.setOutputProperty(OutputKeys.METHOD, "xml");
+		t.setOutputProperty(OutputKeys.INDENT, "no");
+		t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
         t.setOutputProperty(OutputKeys.ENCODING, getEncoding());
         t.transform(source, result);
 		
-		// ascii text output
+		// output
 		String output = sw.getBuffer().toString();
+		// remove doc element
+    	output = output.replaceFirst("^<item-photo>", "");
+    	output = output.replaceFirst("</item-photo>$", "");				
 		Charset charset = Charset.forName(getEncoding());	// output to correct encoding
 		write(destPhotoURL, fileName, new ByteArrayInputStream(output.getBytes(charset)));
 
