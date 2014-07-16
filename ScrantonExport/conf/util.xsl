@@ -64,8 +64,8 @@
 		    <xsl:when test="$pub='VI_DAILYNEWS'">VIDN</xsl:when>
 		    <xsl:when test="$pub='TSWG'">
 		    	<xsl:choose>
-		    		<xsl:when test="$edition='NEW_AGE'">WGNA</xsl:when>
-		    		<xsl:when test="$edition='WYOMING_CTY_ADV'">WGWA</xsl:when>
+		    		<xsl:when test="$edition='WGNA'">TSWG</xsl:when>
+		    		<xsl:when test="$edition='WGWA'">TSWG</xsl:when>
 		    		<xsl:otherwise>UNKNOWN_SITE</xsl:otherwise>
 		    	</xsl:choose>
 		    </xsl:when>
