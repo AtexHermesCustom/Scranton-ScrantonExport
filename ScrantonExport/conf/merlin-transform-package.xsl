@@ -146,11 +146,11 @@
         	
         	<SOURCE><xsl:value-of select="$pub"/></SOURCE>
         	<SERVICE><xsl:value-of select="local:getSiteCode($pub, $edition)"/></SERVICE>
-        	<PUBDATE><xsl:value-of select="local:formatDateDelim($pageInfo/pubdate, '/')"/></PUBDATE>
+        	<PUBDATE><xsl:value-of select="$pageInfo/pubdate"/></PUBDATE>
         	<EDITION><xsl:value-of select="$edition"/></EDITION>
         	<SECTION></SECTION>
         	<ZONE><xsl:value-of select="$pageInfo/section"/></ZONE>
-        	<PAGE><xsl:value-of select="$pageInfo/page-number"/></PAGE>
+        	<PAGE><xsl:value-of select="format-number($pageInfo/page-number, '00')"/></PAGE>
         	<OBJECT><xsl:value-of select="concat(substring($pub, 1, 3), $pkgId)"/></OBJECT>
         	<REFERENCE><xsl:value-of select="$pkgName"/></REFERENCE>
         	<LASTEDITOR><xsl:value-of select="./modifier/name"/></LASTEDITOR>
@@ -215,7 +215,7 @@
         	<Zone><xsl:value-of select="$pageInfo/section"/></Zone>
         	<Edition><xsl:value-of select="$edition"/></Edition>
         	<Layout_Desk><xsl:value-of select="./department_id"/></Layout_Desk>
-        	<Page_Name><xsl:value-of select="$pageInfo/page-number"/></Page_Name>
+        	<Page_Name><xsl:value-of select="format-number($pageInfo/page-number, '00')"/></Page_Name>
         	<Article_Name><xsl:value-of select="$pkgName"/></Article_Name>
         	<Pub_Caption>
         		<xsl:if test="$caption">

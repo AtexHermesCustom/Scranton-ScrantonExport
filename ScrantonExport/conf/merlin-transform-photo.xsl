@@ -42,7 +42,7 @@
 			<xsl:text>Layout_Desk&tab;</xsl:text><xsl:value-of select="worker:getDepartmentName(./Layout_Desk)"/><xsl:text>&linebreak;</xsl:text>
 			<xsl:text>Page_Name&tab;</xsl:text><xsl:value-of select="./Page_Name"/><xsl:text>&linebreak;</xsl:text>
 			<xsl:text>Article_Name&tab;</xsl:text><xsl:value-of select="./Article_Name"/><xsl:text>&linebreak;</xsl:text>
-			<xsl:text>Pub_Caption&tab;</xsl:text><xsl:value-of select="local:getTextContent(./Pub_Caption/caption/*)"/><xsl:text>&linebreak;</xsl:text>
+			<xsl:text>Pub_Caption&tab;</xsl:text><xsl:value-of select="replace(local:getTextContent(./Pub_Caption/caption/*), '&#x0A;', ' ')"/><xsl:text>&linebreak;</xsl:text>
 			<xsl:variable name="iptcCopyright" select="worker:getIptcCopyrightNotice(./CopyrightSourceFile)"/>
 			<xsl:text>Copyright&tab;</xsl:text><xsl:value-of select="$iptcCopyright"/><xsl:text>&linebreak;</xsl:text>
 			<xsl:text>Rights&tab;</xsl:text>
